@@ -107,10 +107,8 @@
     </div>
   </div>
 
-  <script>
-    // Set countdown target: 10 full days from now
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 10); // 10 days
+  <script>// Fixed target date (10 days from live publish)
+const targetDate = new Date("December 7, 2025 05:55:00");
 
     function updateCountdown() {
       const now = new Date().getTime();
