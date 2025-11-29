@@ -1,135 +1,1001 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon | WHY NOT</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    body, html {
-      height: 100%;
-      font-family: 'Arial', sans-serif;
-    }
+  <title>WHY NOT – Luxury Mobile Bar & Bartenders in Miami</title>
 
-    .background {
-      background: url('misha.png') no-repeat center center/cover;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
+  <!-- Basic SEO -->
+  <meta name="description" content="WHY NOT is a luxury mobile bar service in Miami. Professional bartenders, custom cocktail menus, and a stunning mobile bar setup for private events. Host provides liquor, we handle the rest." />
+  <meta name="keywords" content="Miami mobile bar, Miami bartender, private bartender, luxury bar service, mobile cocktail bar, Miami events, villa party bar, yacht bartender" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://everywhere.bar/" />
 
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-    }
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.png" type="image/png" sizes="512x512">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="512x512" href="img/favicon.png">
 
-    .logo {
-      position: absolute;
-      top: 20px; left: 20px;
-      z-index: 11;
-    }
+  <!-- Theme color (browser UI) -->
+  <meta name="theme-color" content="#050609" />
 
-    .logo img {
-      height: 70px;
-      width: auto;
-    }
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="WHY NOT – Luxury Mobile Bar & Bartenders in Miami" />
+  <meta property="og:description" content="Gatsby-style mobile bar experience in Miami. We bring the bar, bartenders, glassware, ice & mixers. You provide the liquor, we handle the rest." />
+  <meta property="og:url" content="https://everywhere.bar/" />
+  <meta property="og:site_name" content="WHY NOT – Mobile Bar Miami" />
+  <meta property="og:image" content="/img/social-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-    .content {
-      position: relative;
-      color: white;
-      text-align: center;
-      z-index: 10;
-    }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WHY NOT – Luxury Mobile Bar & Bartenders in Miami" />
+  <meta name="twitter:description" content="Luxury mobile bar & bartender service for villas, house parties, rooftops, yachts & corporate events in Miami. Host provides liquor, we bring the bar." />
+  <meta name="twitter:image" content="/img/social-preview.jpg" />
 
-    .content h1 {
-      font-size: 6vw;
-      letter-spacing: 10px;
-      font-weight: 700;
-    }
+  <!-- Preload social preview image so link shares look crisp -->
+  <link rel="preload" as="image" href="/img/social-preview.jpg" />
 
-    .content p {
-      font-size: 1.2vw;
-      margin-top: 15px;
-      font-weight: 400;
-    }
-
-    .content a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .countdown {
-      font-size: 1.5vw;
-      margin-top: 10px;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    @media (max-width: 768px) {
-      .content h1 { font-size: 11vw; }
-      .content p { font-size: 4.5vw; }
-      .countdown { font-size: 5.5vw; }
-      .logo img { height: 55px; }
-    }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="background">
-    <div class="overlay"></div>
-    <div class="logo">
-      <img src="logo.png" alt="Logo">
-    </div>
-    <div class="content">
-      <h1>WHY&nbsp;NOT</h1>
+  <div class="page-wrapper">
+    <div class="page-glow" aria-hidden="true"></div>
 
-      <p class="contact">
-        <i class="fa-solid fa-phone"></i> 
-        <a href="tel:+17287773950">728.777.3950</a>
-      </p>
-      <p>
-        <i class="fa-brands fa-instagram"></i>
-        <a href="https://instagram.com/evrwrbr" target="_blank">@evrwrbr</a>
-      </p>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-inner container">
+        <a href="#top" class="logo-mark">
+          <span class="logo-icon" aria-hidden="true">
+            <img src="img/logo.png" alt="WHY NOT Bar Logo" class="logo-icon">
+          </span>
+          <span class="logo-text">
+            <span class="logo-main">WHY&nbsp;NOT</span>
+            <span class="logo-sub">MOBILE BAR & BARTENDERS</span>
+          </span>
+        </a>
 
-      <p style="margin-top:20px; font-size:0.9vw;">COMING SOON</p>
-      <p class="countdown" id="countdown"></p>
+        <nav>
+          <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+            <span></span>
+          </button>
+
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#events">Events</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Book Us</a>
+            <button class="nav-cta" style="color: whitesmoke;" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
+              Request a date
+              <span>→</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+        <!-- FULL-WIDTH VIDEO HERO WITH OVERLAY TEXT -->
+        <section class="hero-pour">
+          <div class="hero-pour-inner">
+            <video
+              class="hero-pour-video"
+              muted
+              playsinline
+              preload="auto"
+              poster="img/martini-hero-poster-start.jpg"
+            >
+              <source src="img/martini-hero.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+      
+            <!-- Overlay: tagline + main hero text (NO right tile) -->
+            <div class="hero-pour-overlay">
+                <img
+    src="img/whynot.png"
+    alt="WHY NOT logo"
+    class="hero-logo-overlay"
+  />
+              <div class="container" style="transform: translateY(40px);">
+                <div class="hero hero-pour-content">
+                  
+                    <h1 class="hero-title">
+                        Why not turn your next night<br />
+                        <span><strong>into a private cocktail bar?</strong></span>
+                      </h1>  
+                      <div class="hero-pills" style="transform: translateY(20px);">
+                        <a href="#events" class="pill pill--gold">
+                          House parties · Villas · Yachts · <strong>anywhere</strong>
+                        </a>
+                      </div>
+                      
+                  
+                
+                  
+                  <div class="hero-cta-row" style="transform: translateY(20px);">
+                    <button class="btn-primary" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
+                      <strong>BOOK NOW</strong>
+                      
+                    </button>
+                    <button class="btn-ghost" type="button" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'});">
+                      View services
+                      
+                    </button>
+                  </div>
+                  
+                  <p class="hero-subtitle" style="transform: translateY(20px); color: azure;">
+                    WHY NOT is a full–service mobile bar and bartender team that
+                    arrives on&nbsp;site with a designer bar, premium glassware,
+                    ice, mixers, and all bar equipment. 
+                  </p>
+                  <div class="hero-pre" style="transform: translateY(20px);">
+                    <span class="hero-pre-dot"></span>
+                    <a href="terms.html" style="text-decoration: none; color: azure;">
+                      YOU PROVIDE THE LIQUOR · <strong>WE HANDLE THE SHOW</strong>
+                    </a>
+                  </div>
+                  
+                  
+                  <div class="hero-note" style="transform: translateY(60px);">
+                    <strong>Typical events:</strong> birthdays, rooftops, villa parties, corporate gatherings,
+                    yacht charters, bridal showers, bachelor / bachelorette, holiday dinners, brand activations
+                    and more.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          
+
+      <!-- ABOUT & HOW IT WORKS -->
+      <section id="about">
+        <div class="container split-grid">
+          <div>
+            <div class="section-header">
+              <div class="eyebrow">About WHY NOT</div>
+              <h2 class="section-title">A private bar, wherever you are.</h2>
+              <p class="section-subtitle">
+                WHY NOT is a boutique mobile bar concept created for hosts who love the look
+                and feel of a luxury hotel bar in a private setting. No plastic coolers,
+                no folding tables — just a clean Gatsby–inspired setup, polished bartenders,
+                and a calm, cinematic bar presence.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-header-row">
+                <div>
+                  <div class="card-title">What we bring</div>
+                  <div class="card-kicker">Everything behind the bar</div>
+                </div>
+                <div class="card-tag">Host provides alcohol</div>
+              </div>
+              <div class="card-body">
+                <p>
+                  We arrive fully equipped to run a professional bar in your space.
+                  You pick the bottles, we take care of the rest:
+                </p>
+                <div class="list-columns">
+                  <ul>
+                    <li><span class="list-bullet"></span>Designer mobile bar station</li>
+                    <li><span class="list-bullet"></span>Professional bartender(s)</li>
+                    <li><span class="list-bullet"></span>Shakers, tools & barware</li>
+                    <li><span class="list-bullet"></span>Premium glassware or cups</li>
+                  </ul>
+                  <ul>
+                    <li><span class="list-bullet"></span>Ice management & coolers</li>
+                    <li><span class="list-bullet"></span>Fresh juices & mixers</li>
+                    <li><span class="list-bullet"></span>Garnishes & syrups</li>
+                    <li><span class="list-bullet"></span>Full bar setup & breakdown</li>
+                  </ul>
+                </div>
+                <p class="card-important">
+                  <strong>Important:</strong> WHY NOT does <em>not</em> sell or supply alcohol. All liquor is
+                  purchased and owned by the host. We can provide a curated shopping list
+                  based on your menu and guest count.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-header">
+              <div class="eyebrow">How it works</div>
+              <h2 class="section-title">Effortless from first message to last pour.</h2>
+              <p class="section-subtitle">
+                From the first inquiry, we guide you through headcount, menu, and timing so
+                your bar is fully dialed in — and you actually enjoy your own party.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-header-row">
+                <div>
+                  <div class="card-title">Your event, step by step</div>
+                  <div class="card-kicker">A simple 4-step flow</div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="steps">
+                  <div class="step">
+                    <div class="step-label">Step 01</div>
+                    <div><strong>Inquiry & concept.</strong> Share your date, address, guest count and occasion.
+                      We confirm availability and suggest the right package + number of bartenders.</div>
+                  </div>
+                  <div class="step">
+                    <div class="step-label">Step 02</div>
+                    <div><strong>Menu & shopping list.</strong> Choose from our signature cocktail menus or
+                      request a custom vibe. We send you a precise liquor shopping list.
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-label">Step 03</div>
+                    <div><strong>Setup & showtime.</strong> On event day we arrive early, build the bar,
+                      prep garnishes and stock ice. The bar opens on time, with your music and energy.
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-label">Step 04</div>
+                    <div><strong>Last call & clean down.</strong> We handle last call, organize remaining liquor
+                      for you, break down the bar and leave the space as we found it.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Services</div>
+            <h2 class="section-title">What WHY NOT can handle for you.</h2>
+            <p class="section-subtitle">
+              From a five–person martini night in Brickell to a 150–guest villa party
+              in Miami Beach, we tailor the bar, staff and menu to your exact night.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-tagline">House & apartment parties</div>
+              <h3 class="service-title">Private in–home bar</h3>
+              <p class="service-text">
+                Perfect for birthdays, dinner parties, holidays or just “because”.
+                We turn your living room, backyard, rooftop or terrace into a clean,
+                photo–ready cocktail bar.
+              </p>
+              <div class="service-meta">
+                <span>Up to ~40 guests · 1 bartender</span>
+                <span>Popular in Brickell, Edgewater, Midtown</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-tagline">Luxury villas & penthouses</div>
+              <h3 class="service-title">Signature cocktail bar</h3>
+              <p class="service-text">
+                A full signature menu with 3–5 curated cocktails, classics on request,
+                plus a clean back–bar look that matches high–end interiors and VIP guests.
+              </p>
+              <div class="service-meta">
+                <span>40–120 guests · 1–3 bartenders</span>
+                <span>Ideal for hosted villa experiences</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-tagline">Corporate & brand events</div>
+              <h3 class="service-title">Corporate mobile bar</h3>
+              <p class="service-text">
+                Polished, uniformed bartenders and a discrete setup for brand launches,
+                office events, client nights, influencer dinners or showrooms.
+              </p>
+              <div class="service-meta">
+                <span>Flexible layouts & branding options</span>
+                <span>Miami · Design District · Wynwood</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-tagline">Yachts & rooftop pools</div>
+              <h3 class="service-title">Yacht & poolside service</h3>
+              <p class="service-text">
+                Compact mobile bar or bar–cart style setup to fit yacht decks or
+                pool cabanas. Perfect for daytime spritzes, champagne and light cocktails.
+              </p>
+              <div class="service-meta">
+                <span>Smaller footprint · Sea–ready</span>
+                <span>Works with existing yacht crew</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-tagline">Pre–game & after parties</div>
+              <h3 class="service-title">Gatsby pre–game</h3>
+              <p class="service-text">
+                Shorter, high–energy service designed before nightlife, concerts or
+                sporting events. Fast signature drinks and zero cleanup for you.
+              </p>
+              <div class="service-meta">
+                <span>2–3 hour service blocks</span>
+                <span>Great before clubs & arenas</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-tagline">Micro weddings & elopements</div>
+              <h3 class="service-title">Intimate celebration bar</h3>
+              <p class="service-text">
+                Toast–ready champagne service, a refined cocktail list and a calm,
+                elegant bar presence so you can focus on your guests, not on pouring.
+              </p>
+              <div class="service-meta">
+                <span>Up to ~80 guests</span>
+                <span>Perfect for villas & courtyards</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTS WE SERVE -->
+      <section id="events">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Events</div>
+            <h2 class="section-title">Where <span style="color: goldenrod;">WHY NOT</span> fits perfectly.</h2>
+            <p class="section-subtitle">
+              Anywhere people gather and you want the bar to look intentional, curated
+              and effortless.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header-row">
+              <div>
+                <div class="card-title">Typical event types</div>
+                <div class="card-kicker">From 8 friends to full villa takeovers</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chips">
+                <div class="chip">Birthday parties & milestone nights</div>
+                <div class="chip">Housewarmings & rooftop gatherings</div>
+                <div class="chip">Bachelor & bachelorette parties</div>
+                <div class="chip">Engagement parties</div>
+                <div class="chip">Micro weddings & elopements</div>
+                <div class="chip">Corporate receptions & mixers</div>
+                <div class="chip">Launch parties & openings</div>
+                <div class="chip">Influencer & creator events</div>
+                <div class="chip">Yacht charters & sandbar days</div>
+                <div class="chip">Holiday dinners & NYE</div>
+                <div class="chip">Photo / video shoot hospitality</div>
+                <div class="chip">VIP pre–game & after parties</div>
+              </div>
+
+              <p class="events-note">
+                Have something different in mind? Share it in your inquiry — if we can safely
+                and legally run a bar there, we will find a way to make it look beautiful.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKAGES -->
+      <section id="packages">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Packages</div>
+            <h2 class="section-title">Curated for real–world parties.</h2>
+            <p class="section-subtitle">
+              Every event is quoted individually, but these packages describe how
+              we typically structure service. Exact pricing depends on guest count,
+              location, hours, glassware, and any custom requests.
+            </p>
+          </div>
+
+          <div class="packages-grid">
+            <article class="package-card">
+              <div class="package-label">For 8–25 guests</div>
+              <h3 class="package-name">Apartment soirée</h3>
+              <p class="package-copy">
+                A compact, elegant bar setup that fits in apartments and condos without
+                taking over the room.
+              </p>
+              <ul class="package-list">
+                <li>1 professional bartender (up to 4 hours service)</li>
+                <li>Mobile bar or bar–front appropriate for your space</li>
+                <li>Ice, standard mixers, fresh citrus & simple garnishes</li>
+                <li>Setup, breakdown & basic cleanup of the bar area</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-from">Custom quote per event</div>
+                <div class="package-note">Host provides liquor · Additional hour(s) and glassware upgrades available.</div>
+              </div>
+            </article>
+
+            <article class="package-card highlight">
+              <div class="package-label">For 25–80 guests</div>
+              <h3 class="package-name">Villa cocktail experience</h3>
+              <p class="package-copy">
+                Our most requested setup for villas, backyards and rooftops when the bar is
+                a key part of the night.
+              </p>
+              <ul class="package-list">
+                <li>1–2 bartenders + barback depending on guest count</li>
+                <li>Designer mobile bar with Gatsby–inspired look & lighting</li>
+                <li>Curated signature cocktail menu + classics on request</li>
+                <li>All bar tools, ice management, mixers & garnish program</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-from">Tiered pricing by guest count</div>
+                <div class="package-note">Perfect for birthdays, micro weddings, corporate & content events.</div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-label">For 80+ guests</div>
+              <h3 class="package-name">Event & corporate bar</h3>
+              <p class="package-copy">
+                Multi–station bar service with staff and bar layout designed around
+                guest flow and brand requirements.
+              </p>
+              <ul class="package-list">
+                <li>Multiple bartenders & barbacks</li>
+                <li>One or more bar stations to avoid lines</li>
+                <li>Menu designed around speed & consistency</li>
+                <li>Branding & custom details available on request</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-from">Fully custom proposals</div>
+                <div class="package-note">Ideal for agencies, brands and production companies.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US / FAQ / AREA -->
+      <section>
+        <div class="container">
+          <div class="split-grid">
+            <div>
+              <div class="section-header">
+                <div class="eyebrow"><span style="color: azure;">Why</span> WHY NOT</div>
+                <h2 class="section-title">The bar sets the tone.</h2>
+                <p class="section-subtitle">
+                  Guests notice everything around the bar — how it looks, how fast they get their drinks,
+                  how confident and calm the bartender is. That’s what we obsess over.
+                </p>
+              </div>
+
+              <div class="highlights">
+                <div class="highlight">
+                  <div class="highlight-label">Gatsby–inspired design</div>
+                  <p>
+                    Clean, geometric lines, warm gold accents and a modern dark palette that feels more
+                    like a boutique hotel than a folding rental bar.
+                  </p>
+                </div>
+                <div class="highlight">
+                  <div class="highlight-label">Professional bartenders</div>
+                  <p>
+                    Not just "someone who can pour". We work with bartenders who can handle busy service,
+                    talk to guests and keep the energy right.
+                  </p>
+                </div>
+                <div class="highlight">
+                  <div class="highlight-label">Thoughtful planning</div>
+                  <p>
+                    You receive a clear liquor shopping list, menu plan and service timeline so
+                    nothing is guessed the day of your event.
+                  </p>
+                </div>
+                <div class="highlight">
+                  <div class="highlight-label">Discreet & reliable</div>
+                  <p>
+                    We arrive early, dress appropriately for your event and leave the bar area
+                    organized and clean when we’re done.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-header">
+                <div class="eyebrow">FAQ & Service area</div>
+                <h2 class="section-title">Good to know before you book.</h2>
+              </div>
+
+              <div class="faq-grid">
+                <div>
+                  <div class="faq-item">
+                    <div class="faq-q">Do you provide the alcohol?</div>
+                    <div class="faq-a">
+                        No — the host purchases and owns all liquor.
+                        We’ll send you a full shopping list with exact brands and quantities.
+                        
+                         Don’t want to shop?
+                        We can buy and deliver everything for you for a $100 concierge fee (using your funds).
+                        Alcohol always remains your property.
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <div class="faq-q">What areas do you serve?</div>
+                    <div class="faq-a">
+                      We are based in Miami and typically serve Miami Beach, South Beach, Brickell,
+                      Edgewater, Wynwood, Design District, Coral Gables and surrounding areas. For
+                      events in Fort Lauderdale, Boca, Palm Beach or the Keys, travel fees may apply.
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <div class="faq-q">How far in advance should I book?</div>
+                    <div class="faq-a">
+                      Weekends and popular dates can book weeks or months ahead. If you know your date,
+                      send an inquiry as early as possible — especially for holidays and major events.
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="faq-item">
+                    <div class="faq-q">Is there a minimum service time?</div>
+                    <div class="faq-a">
+                      Most events have a 3–4 hour service minimum, plus setup and breakdown time.
+                      Shorter pre–game style events can be arranged depending on the date.
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <div class="faq-q">Can you do non–alcoholic bars?</div>
+                    <div class="faq-a">
+                      Yes. We can create a full zero–proof bar menu with elevated mocktails for
+                      corporate events, wellness experiences or teen celebrations.
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <div class="faq-q">Are you insured?</div>
+                    <div class="faq-a">
+                      We can carry general and liquor liability insurance appropriate for mobile bar
+                      service. If your building or venue requires specific coverage, mention it in
+                      your inquiry so we can confirm details.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / BOOKING -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Booking</div>
+            <h2 class="section-title">Tell us about your night.</h2>
+            <p class="section-subtitle">
+              Fill out this quick form and we’ll respond with availability and a custom proposal
+              for your event. This is not a contract or commitment — just a starting point to
+              design your bar experience.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div>
+              <div class="badge-row">
+                <div class="badge badge--gold">Miami based</div>
+                <div class="badge">Available 7 days a week by request</div>
+                <div class="badge">Evenings & late nights welcome</div>
+              </div>
+
+              <form
+  id="contactForm"
+  action="https://formspree.io/f/xvgjjkvo"
+  method="POST"
+>
+  <!-- Optional helpers for Formspree -->
+  <input type="hidden" name="_subject" value="New WHY NOT booking inquiry" />
+  <input type="hidden" name="formName" value="why-not-contact" />
+
+                <div>
+                  <label for="name">Full name</label>
+                  <input id="name" name="name" type="text" placeholder="How should we address you?" required />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="For day–of details" />
+                </div>
+                <div>
+                  <label for="date">Event date</label>
+                  <input id="date" name="date" type="date" />
+                </div>
+                <div>
+                  <label for="guests">Approx. guest count</label>
+                  <select id="guests" name="guests">
+                    <option value="" selected>Select range</option>
+                    <option>Up to 15 guests</option>
+                    <option>15–30 guests</option>
+                    <option>30–60 guests</option>
+                    <option>60–100 guests</option>
+                    <option>100+ guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="location">Neighborhood / venue</label>
+                  <input id="location" name="location" type="text" placeholder="Brickell, South Beach, private villa, etc." />
+                </div>
+                <div class="field-full">
+                  <label for="occasion">Occasion</label>
+                  <input id="occasion" name="occasion" type="text" placeholder="Birthday, villa party, corporate mixer, yacht day, etc." />
+                </div>
+                <div class="field-full">
+                  <label for="details">Anything we should know?</label>
+                  <textarea id="details" name="details" placeholder="Tell us about the vibe, dress code, special requests or must–have cocktails."></textarea>
+                </div>
+                <div class="form-note">
+                  By submitting this form you’re simply starting a conversation. We will email you back
+                  with availability, rough pricing and next steps.
+                </div>
+                <div id="formStatus" class="form-small-note" style="min-height: 1.2em;"></div>
+
+                <div class="form-actions">
+                    <button class="btn-primary" type="submit" style="position: relative; overflow: hidden;">
+                        Send inquiry
+                        <span style="
+                          display: inline-block;
+                          transition: transform 0.2s ease;
+                        ">
+                          →
+                        </span>
+                      </button>
+                      
+                      <style>
+                        /* Only target this button’s span */
+                        button.btn-primary:hover span,
+                        button.btn-primary:active span {
+                          transform: translateX(4px);
+                        }
+                      </style>
+                  
+                </div>
+              </form>
+            </div>
+
+            <div>
+              <div class="contact-meta">
+                <p>
+                  If you’d rather speak directly, you can reach us via phone/WhatsApp
+                  with your date and basic event info.
+                </p>
+                <p>
+                  <strong>Email:</strong>
+                  <a href="mailto:whynot@everywhere.bar">whynot@everywhere.bar</a>
+                </p>
+                <p>
+                  <strong>Phone / Text / WhatsApp:</strong>
+                  <a href="tel:+1-728-777-3950">+1 (728) 777–3950</a>
+                </p>
+
+                <div class="contact-tiles">
+                  <div class="contact-tile">
+                    <div class="contact-tile-label">Typical response time</div>
+                    Within 24 hours for new inquiries. Same–day replies where possible for
+                    events less than 7 days away.
+                  </div>
+                  <div class="contact-tile">
+                    <div class="contact-tile-label">Last–minute bookings</div>
+                    Have an event this week and need a bartender fast? Mention it in your
+                    message — if we’re free, we’ll take it.
+                  </div>
+                  <div class="contact-tile">
+                    <div class="contact-tile-label">Service area</div>
+                    Miami Beach · Brickell · Downtown · Wynwood · Design District ·
+                    Edgewater · Coral Gables · Coconut Grove and more...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+        <!-- CLOSING ANIMATION STRIP -->
+       <!-- FINAL TAGLINE SECTION -->
+<section class="final-tagline">
+    <div class="container final-tagline-inner">
+      <img
+        src="img/whynot1.png"
+        alt="Why Not – The Night is Young"
+        class="final-tagline-logo"
+      />
+  
+      <div class="final-tagline-textwrap">
+        <div id="finalTaglineText" class="final-tagline-text" aria-label="Bar everywhere">
+          <!-- letters are injected by JS -->
+        </div>
+      </div>
     </div>
+  </section>
+  
+          
+      
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <div>© <span id="year"></span> WHY NOT · Luxury Mobile Bar & Bartenders · Miami, Florida</div>
+          <div class="legal-line">
+            WHY NOT is a mobile bartending and bar setup service. We do not sell or supply alcoholic
+            beverages. All liquor is purchased and owned by the host or venue. Service subject to
+            availability and local regulations.
+          </div>
+        </div>
+        <div>
+          <div class="footer-links">
+            <a href="#top">Back to top</a>
+            <a href="#contact">Request a quote</a>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
-  <script>// Fixed target date (10 days from live publish)
-const targetDate = new Date("December 7, 2025 05:55:00");
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+  
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('open');
+      });
+    }
+  
+    // Close nav on link click (mobile)
+    navLinks?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 780) {
+          navToggle.classList.remove('active');
+          navLinks.classList.remove('open');
+        }
+      });
+    });
+  
+    // ==== SCROLL-SCRUB FULL-WIDTH STICKY VIDEO HERO ====
+    document.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.hero-pour');
+      const video = document.querySelector('.hero-pour-video');
+      const heroContent = document.querySelector('.hero-pour-content');
+      const heroLogo = document.querySelector('.hero-logo-overlay');
+      if (!section || !video) return;
+  
+      let duration = 0;
+      let ready = false;
+      let sectionTop = 0;
+      let sectionHeight = 0;
+      let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  
+      function updateBounds() {
+        const rect = section.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+        sectionTop = scrollY + rect.top;
+        sectionHeight = rect.height || viewportHeight;
+        viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      }
+  
+      updateBounds();
+  
+      video.addEventListener('loadedmetadata', () => {
+        duration = video.duration || 5;
+        ready = true;
+        video.currentTime = 0; // start on empty glass
+        updateBounds();
+      });
+  
+      function clamp(val, min, max) {
+        return Math.max(min, Math.min(max, val));
+      }
+  
+      function onScroll() {
+        if (!ready) return;
+  
+        const scrollY = window.scrollY || window.pageYOffset;
+  
+        // progress through the hero-pour section: 0 (top) → 1 (bottom)
+        const maxScroll = Math.max(1, sectionHeight - viewportHeight);
+        let progress = (scrollY - sectionTop) / maxScroll;
+        progress = clamp(progress, 0, 1);
+  
+        // 1) scrub video: empty → full across full progress
+        const time = duration * progress;
+        video.currentTime = time;
+  
+        // 2) fade / slide in hero text:
+        // start appearing when progress ~0.5, fully visible by ~0.95
+        const textStart = 0.5;
+        const textEnd = 0.95;
+        let textProgress = (progress - textStart) / (textEnd - textStart);
+        textProgress = clamp(textProgress, 0, 1);
+  
+        if (heroContent) {
+          const opacity = textProgress;
+          const translateY = (1 - textProgress) * 40; // from 40px down to 0
+          heroContent.style.opacity = opacity.toString();
+          heroContent.style.transform = `translateY(${translateY}px)`;
+        }
+  
+        // 3) fade out logo from progress 0 → 0.25
+        if (heroLogo) {
+          const logoEnd = 0.45; // quarter of the scroll / video
+          let logoProgress = progress / logoEnd;
+          logoProgress = clamp(logoProgress, 0, 1);
+          const logoOpacity = 1 - logoProgress; // 1 at start → 0 at 0.25
+          heroLogo.style.opacity = logoOpacity.toString();
+        }
+      }
+  
+      window.addEventListener('scroll', onScroll);
+      window.addEventListener('resize', updateBounds);
+      window.addEventListener('load', updateBounds);
+    });
+  </script>
+  
+  
+  <script>
+    // ... your existing script above (year, nav, hero video, etc.)
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
+    document.addEventListener('DOMContentLoaded', () => {
+      // === FINAL TAGLINE ANIMATION (BAR EVERYWHERE → EVERYWHERE.BAR) ===
+      const container = document.getElementById('finalTaglineText');
+      if (!container) return;
 
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "🚀 We're ready!";
-        return;
+      const phrase1 = 'BAR\u00A0EVERYWHERE\u00A0?';
+      const phrase2 = 'EVERYWHERE.BAR';
+
+      const typeSpeed = 250;          // ms between letters
+      const holdAfterType = 2700;     // pause when fully typed
+      const shatterDuration = 500;   // ms for shatter animation
+      const pauseBetween = 500;      // between shatter and next phrase
+
+      function createLetters(text) {
+        container.innerHTML = '';
+        const letters = [];
+
+        [...text].forEach((ch, index) => {
+          const span = document.createElement('span');
+          span.className = 'final-letter';
+          span.textContent = ch;
+          span.style.setProperty('--index', index.toString());
+          container.appendChild(span);
+          letters.push(span);
+        });
+
+        return letters;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      function typePhrase(letters, callback) {
+        letters.forEach((span, index) => {
+          const delay = index * typeSpeed;
+          setTimeout(() => {
+            span.style.animation = `final-letter-in 0.5s forwards`;
+          }, delay);
+        });
 
-      document.getElementById("countdown").innerHTML =
-        `Ready in <strong>${days}d ${hours}h ${minutes}m ${seconds}s</strong>`;
-    }
+        const total = (letters.length - 1) * typeSpeed + 500 + holdAfterType;
+        setTimeout(callback, total);
+      }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+      function shatterPhrase(letters, callback) {
+        letters.forEach((span) => {
+          // random horizontal drift for "sparkles"
+          const dx = (Math.random() * 48 - 24).toFixed(1); // -24px → +24px
+          span.style.setProperty('--dx', `${dx}px`);
+          span.style.animation = `final-letter-out ${shatterDuration}ms forwards`;
+        });
+
+        setTimeout(callback, shatterDuration + pauseBetween);
+      }
+
+      function runLoop() {
+        // 1) BAR EVERYWHERE
+        let letters = createLetters(phrase1);
+        typePhrase(letters, () => {
+          shatterPhrase(letters, () => {
+            // 2) EVERYWHERE.BAR
+            letters = createLetters(phrase2);
+            typePhrase(letters, () => {
+              shatterPhrase(letters, () => {
+                // loop again
+                runLoop();
+              });
+            });
+          });
+        });
+      }
+
+      runLoop();
+    });
   </script>
+
+<script>
+    // Handle contact form submission with Formspree
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      const statusEl = document.getElementById('formStatus');
+  
+      if (!form || !statusEl) return;
+  
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+  
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+  
+        // Clear previous message
+        statusEl.textContent = '';
+        statusEl.style.color = 'var(--text-muted)';
+  
+        // Disable button + show sending state
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.7';
+          submitBtn.innerHTML = 'Sending…';
+        }
+  
+        try {
+          const formData = new FormData(form);
+  
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+  
+          if (response.ok) {
+            form.reset();
+            statusEl.textContent = 'Thank you — your inquiry was sent successfully. We’ll be in touch shortly.';
+            statusEl.style.color = 'var(--accent)';
+          } else {
+            statusEl.textContent = 'Something went wrong sending the form. Please try again or email whynot@everywhere.bar.';
+            statusEl.style.color = '#f97373';
+          }
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = 'Network error. Please check your connection or email whynot@everywhere.bar.';
+          statusEl.style.color = '#f97373';
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerHTML = originalBtnText;
+          }
+        }
+      });
+    });
+  </script>
+  
+
+  
+  
 </body>
 </html>
