@@ -110,7 +110,7 @@
                       </h1>  
                       <div class="hero-pills" style="transform: translateY(20px);">
                         <a href="#events" class="pill pill--gold">
-                          House parties · Villas · Yachts · <strong>anywhere</strong>
+                          House parties · Villas · Yachts
                         </a>
                       </div>
                       
@@ -136,7 +136,7 @@
                   <div class="hero-pre" style="transform: translateY(20px);">
                     <span class="hero-pre-dot"></span>
                     <a href="terms.html" style="text-decoration: none; color: azure;">
-                      YOU PROVIDE THE LIQUOR · <strong>WE HANDLE THE SHOW</strong>
+                      YOU PROVIDE THE LIQUOR<br><strong>WE HANDLE THE SHOW</strong>
                     </a>
                   </div>
                   
@@ -174,7 +174,7 @@
                   <div class="card-title">What we bring</div>
                   <div class="card-kicker">Everything behind the bar</div>
                 </div>
-                <div class="card-tag">Host provides alcohol</div>
+                <div class="card-tag">Host&nbsp;provides&nbsp;alcohol</div>
               </div>
               <div class="card-body">
                 <p>
@@ -593,7 +593,7 @@
             <div>
               <div class="badge-row">
                 <div class="badge badge--gold">Miami based</div>
-                <div class="badge">Available 7 days a week by request</div>
+                <div class="badge">Available 7 days a week</div>
                 <div class="badge">Evenings & late nights welcome</div>
               </div>
 
@@ -696,11 +696,6 @@
                     events less than 7 days away.
                   </div>
                   <div class="contact-tile">
-                    <div class="contact-tile-label">Last–minute bookings</div>
-                    Have an event this week and need a bartender fast? Mention it in your
-                    message — if we’re free, we’ll take it.
-                  </div>
-                  <div class="contact-tile">
                     <div class="contact-tile-label">Service area</div>
                     Miami Beach · Brickell · Downtown · Wynwood · Design District ·
                     Edgewater · Coral Gables · Coconut Grove and more...
@@ -736,7 +731,7 @@
     <footer>
       <div class="container footer-inner">
         <div>
-          <div>© <span id="year"></span> WHY NOT · Luxury Mobile Bar & Bartenders · Miami, Florida</div>
+          <div>© <span id="year"></span> WHY NOT · Mobile Bar & Bartenders · Miami, FL</div>
           <div class="legal-line">
             WHY NOT is a mobile bartending and bar setup service. We do not sell or supply alcoholic
             beverages. All liquor is purchased and owned by the host or venue. Service subject to
@@ -779,11 +774,24 @@
       });
     });
   // ←←← ADD ONLY THESE 4 LINES (everything else stays 100% unchanged)
-const video = document.querySelector('.hero-pour-video');
+  const video = document.querySelector('.hero-pour-video');
 if (video) {
-  video.muted = true;        // double-confirm
-  video.playsInline = true;  // double-confirm
-  video.play().catch(() => {}); // this unblocks iOS/Android without using autoplay attribute
+  video.muted = true;
+  video.playsInline = true;
+
+  // Only unblock playback on first user interaction or first scroll
+  let unlocked = false;
+  const unlockPlayback = () => {
+    if (!unlocked) {
+      video.play().catch(() => {});  // silently unblock iOS/Android
+      unlocked = true;
+    }
+  };
+
+  // Unblock on first click/tap anywhere OR first scroll
+  document.body.addEventListener('click', unlockPlayback, { once: true });
+  document.body.addEventListener('touchstart', unlockPlayback, { once: true });
+  window.addEventListener('scroll', unlockPlayback, { once: true });
 }
     // ==== SCROLL-SCRUB FULL-WIDTH STICKY VIDEO HERO ====
     document.addEventListener('DOMContentLoaded', () => {
