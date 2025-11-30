@@ -85,8 +85,6 @@
           <div class="hero-pour-inner">
             <video
               class="hero-pour-video"
-              autoplay
-              loop
               muted
               playsinline
               preload="auto"
@@ -780,7 +778,13 @@
         }
       });
     });
-  
+  // ←←← ADD ONLY THESE 4 LINES (everything else stays 100% unchanged)
+const video = document.querySelector('.hero-pour-video');
+if (video) {
+  video.muted = true;        // double-confirm
+  video.playsInline = true;  // double-confirm
+  video.play().catch(() => {}); // this unblocks iOS/Android without using autoplay attribute
+}
     // ==== SCROLL-SCRUB FULL-WIDTH STICKY VIDEO HERO ====
     document.addEventListener('DOMContentLoaded', () => {
       const section = document.querySelector('.hero-pour');
