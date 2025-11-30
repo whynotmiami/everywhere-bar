@@ -779,19 +779,20 @@ if (video) {
   video.muted = true;
   video.playsInline = true;
 
-  // Only unblock playback on first user interaction or first scroll
   let unlocked = false;
-  const unlockPlayback = () => {
+
+  const unlockAndFreeze = () => {
     if (!unlocked) {
-      video.play().catch(() => {});  // silently unblock iOS/Android
+      video.play().catch(() => {});   // this unblocks iOS/Android
+      video.pause();                  // this instantly stops it again → zero runaway frames
       unlocked = true;
     }
   };
 
-  // Unblock on first click/tap anywhere OR first scroll
-  document.body.addEventListener('click', unlockPlayback, { once: true });
-  document.body.addEventListener('touchstart', unlockPlayback, { once: true });
-  window.addEventListener('scroll', unlockPlayback, { once: true });
+  // Fire on the very first user gesture only
+  document.body.addEventListener('touchstart', unlockAndFreeze, { once: true });
+  document.body.addEventListener('click',      unlockAndFreeze, { once: true });
+  window.addEventListener('scroll',      unlockAndFreeze, { once: true });
 }
     // ==== SCROLL-SCRUB FULL-WIDTH STICKY VIDEO HERO ====
     document.addEventListener('DOMContentLoaded', () => {
