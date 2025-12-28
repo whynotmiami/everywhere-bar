@@ -43,23 +43,22 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- MOBILE/TABLET PRELOADER -->
-  <div id="preloader">
-    <div class="preloader-inner">
-      <div class="preloader-glass">
-        <img
-          src="img/preloader-martini.png"
-          alt="WHY NOT martini outline"
-          class="preloader-martini-img"
-        />
-        <span class="preloader-orbit"></span>
-      </div>
-
-      <button id="preloaderTap" type="button" class="preloader-tap-label">
-        TAP TO EXPLORE
-      </button>
+  <!-- MOBILE PRELOADER -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-glass">
+      <img
+        src="img/preloader-martini.png"
+        alt="WHY NOT martini outline"
+        class="preloader-martini-img"
+      />
+      <div class="preloader-sparkle" aria-hidden="true"></div>
     </div>
+
+    <div class="preloader-tap-text">TAP TO EXPLORE</div>
   </div>
+</div>
+
 
   <div class="page-wrapper">
 
@@ -768,39 +767,42 @@
     </footer>
   </div>
   <script>
-    // Mobile / tablet preloader: martini + "Tap to explore"
     document.addEventListener('DOMContentLoaded', () => {
-      const tap = document.getElementById('preloaderTap');
-      const isMobileOrTablet = window.matchMedia('(max-width: 1024px)').matches;
-
-      if (!isMobileOrTablet) {
-        // Never show preloader on desktop / laptops
-        document.body.classList.remove('preloader-on', 'preloader-lock');
-        return;
-      }
-
-      // Enable preloader and lock scroll on small screens
+      const preloader = document.getElementById('preloader');
+  
+      // PHONES ONLY:
+      // - max width 768
+      // - coarse pointer (touch)
+      // This avoids laptops + tablets.
+      const isPhoneOnly = window.matchMedia('(max-width: 768px) and (pointer: coarse)').matches;
+  
+      // Safety: remove any leftover classes first
+      document.body.classList.remove('preloader-on', 'preloader-lock');
+  
+      if (!isPhoneOnly || !preloader) return;
+  
+      // Show preloader + lock scroll
       document.body.classList.add('preloader-on', 'preloader-lock');
-
-      const hidePreloader = () => {
+  
+      const hide = () => {
         document.body.classList.remove('preloader-on', 'preloader-lock');
       };
-
-      if (tap) {
-        tap.addEventListener('click', hidePreloader);
-
-        tap.addEventListener(
-          'touchstart',
-          (e) => {
-            // we still let the event bubble so your body touch listener runs
-            e.preventDefault();
-            hidePreloader();
-          },
-          { passive: false }
-        );
-      }
+  
+      // Tap ANYWHERE to close (not a button)
+      preloader.addEventListener('click', hide, { once: true });
+      preloader.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        hide();
+      }, { once: true, passive: false });
+  
+      // If screen resized (rotation etc), re-check
+      window.addEventListener('resize', () => {
+        const stillPhone = window.matchMedia('(max-width: 768px) and (pointer: coarse)').matches;
+        if (!stillPhone) hide();
+      });
     });
   </script>
+  
 
   <script>
     // Dynamic year
