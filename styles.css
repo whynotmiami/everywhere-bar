@@ -60,6 +60,7 @@ body.preloader-on #preloader {
 
 .preloader-inner {
   text-align: center;
+  transform: translateY(-6vh); /* moves logo area up slightly */
 }
 
 .preloader-glass {
@@ -114,7 +115,7 @@ body.preloader-on #preloader {
   opacity: 0.9;
   mix-blend-mode: screen;
 
-  animation: preloader-sweep 2.2s ease-in-out infinite;
+  animation: preloader-sweep 2.4s ease-in-out infinite;
 }
 
 @keyframes preloader-sweep {
@@ -138,6 +139,7 @@ body.preloader-on #preloader {
   transform: scale(0.985);
 
   animation: preloader-tapPulse 2.6s ease-in-out infinite;
+  margin-top: 38px;
 }
 
 @keyframes preloader-tapPulse {
