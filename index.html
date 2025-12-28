@@ -43,7 +43,26 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- MOBILE/TABLET PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-glass">
+        <img
+          src="img/preloader-martini.png"
+          alt="WHY NOT martini outline"
+          class="preloader-martini-img"
+        />
+        <span class="preloader-orbit"></span>
+      </div>
+
+      <button id="preloaderTap" type="button" class="preloader-tap-label">
+        TAP TO EXPLORE
+      </button>
+    </div>
+  </div>
+
   <div class="page-wrapper">
+
     <div class="page-glow" aria-hidden="true"></div>
 
     <!-- NAVBAR -->
@@ -748,6 +767,40 @@
       </div>
     </footer>
   </div>
+  <script>
+    // Mobile / tablet preloader: martini + "Tap to explore"
+    document.addEventListener('DOMContentLoaded', () => {
+      const tap = document.getElementById('preloaderTap');
+      const isMobileOrTablet = window.matchMedia('(max-width: 1024px)').matches;
+
+      if (!isMobileOrTablet) {
+        // Never show preloader on desktop / laptops
+        document.body.classList.remove('preloader-on', 'preloader-lock');
+        return;
+      }
+
+      // Enable preloader and lock scroll on small screens
+      document.body.classList.add('preloader-on', 'preloader-lock');
+
+      const hidePreloader = () => {
+        document.body.classList.remove('preloader-on', 'preloader-lock');
+      };
+
+      if (tap) {
+        tap.addEventListener('click', hidePreloader);
+
+        tap.addEventListener(
+          'touchstart',
+          (e) => {
+            // we still let the event bubble so your body touch listener runs
+            e.preventDefault();
+            hidePreloader();
+          },
+          { passive: false }
+        );
+      }
+    });
+  </script>
 
   <script>
     // Dynamic year
