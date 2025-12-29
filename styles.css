@@ -60,7 +60,7 @@ body.preloader-on #preloader {
 
 .preloader-inner {
   text-align: center;
-  transform: translateY(-5vh); /* moves logo area up slightly */
+  transform: translateY(-2vh); /* moves logo area up slightly */
 }
 
 .preloader-glass {
@@ -1495,38 +1495,49 @@ body.preloader-on #preloader {
     }
   }
   /* === SOCIAL STRIP ============================ */
-.social-strip {
-  padding: 26px 0 18px;
-  text-align: center;
-}
-
-.social-strip-inner {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-}
-
-.social-icon {
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.55);
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 60%);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-.social-icon svg {
-  width: 16px;
-  height: 16px;
-  fill: var(--accent);
-}
-
-.social-icon:hover {
-  transform: translateY(-2px) scale(1.05);
-  border-color: rgba(212, 175, 55, 0.9);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.9);
-}
+  .social-strip{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    padding:28px 0 20px;
+  }
+  
+  .social-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color: #d4af37; /* WHY NOT gold */
+    font-size:16px;
+    opacity:.85;
+    transition: all .4s ease;
+  }
+  
+  .social-icon i{
+    animation: goldPulse 6s ease-in-out infinite;
+  }
+  
+  .social-icon:hover{
+    opacity:1;
+    transform: translateY(-2px);
+  }
+  
+  /* ✨ GOLD LUXURY PULSE (matches your snippet idea) */
+  @keyframes goldPulse {
+    0%, 100% {
+      opacity: 0.7;
+      text-shadow:
+        0 0 4px rgba(212, 175, 55, 0.4),
+        0 0 10px rgba(212, 175, 55, 0.25);
+    }
+  
+    40% {
+      opacity: 1;
+      text-shadow:
+        0 0 6px rgba(212, 175, 55, 0.9),
+        0 0 14px rgba(212, 175, 55, 0.6);
+    }
+  }
+  
